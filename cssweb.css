@@ -1,0 +1,226 @@
+/* --- Digital Resume Document Style --- */
+:root {
+    --paper-bg: #ffffff; /* Pure white paper */
+    --page-bg: #e2e8f0;  /* Grey "desk" background */
+    --text-main: #111827; /* Almost black for high readability */
+    --text-muted: #4b5563; /* Dark grey for secondary info */
+    --line-color: #cbd5e1; /* Light grey for section dividers */
+    --link-color: #2563eb; /* Professional blue for links */
+}
+
+body {
+    background-color: var(--page-bg);
+    color: var(--text-main);
+    /* Classic, clean resume typography */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    padding: 2rem 0;
+}
+
+/* --- The "Piece of Paper" --- */
+.container {
+    max-width: 850px;
+    background-color: var(--paper-bg);
+    margin: 0 auto;
+    padding: 4rem 5rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Header (Top of Resume) --- */
+header {
+    border-bottom: 2px solid var(--text-main);
+    padding-bottom: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.profile-text {
+    flex: 1;
+}
+
+h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.2rem;
+    color: var(--text-main);
+}
+
+h2 {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.profile-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* --- Sections --- */
+.card {
+    /* Removes the 'web box' feel to make it look like a document */
+    background: transparent;
+    padding: 0;
+    margin-bottom: 2rem;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+}
+
+h3 {
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--text-main);
+    border-bottom: 1px solid var(--line-color);
+    padding-bottom: 0.3rem;
+    margin-bottom: 1rem;
+    letter-spacing: 0.5px;
+}
+
+h4 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 0.2rem;
+}
+
+h5 {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+}
+
+/* --- Projects & Content Formatting --- */
+.project-grid {
+    display: block; /* Removes the side-by-side grid to stack like a standard resume */
+}
+
+.project-item {
+    background: transparent;
+    padding: 0;
+    border: none;
+    margin-bottom: 1.5rem;
+}
+
+p {
+    font-size: 0.95rem;
+    color: var(--text-main);
+    margin-bottom: 0.5rem;
+}
+
+/* --- Lists (Skills, Awards, Contact) --- */
+.styled-list, .contact-info {
+    list-style-type: none;
+}
+
+.styled-list li, .contact-info li {
+    position: relative;
+    padding-left: 1rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.styled-list li::before, .contact-info li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--text-main);
+    font-weight: bold;
+}
+
+/* --- Buttons / Links --- */
+.btn {
+    display: inline-block;
+    background-color: transparent;
+    color: var(--link-color);
+    padding: 0;
+    text-decoration: underline;
+    border: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-top: 0.2rem;
+    cursor: pointer;
+}
+
+.btn:hover {
+    color: #1e40af; /* Darker blue */
+}
+
+/* --- Forms --- */
+.contact-form {
+    max-width: 500px;
+}
+
+.contact-form label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 0.2rem;
+    margin-top: 0.8rem;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 0.6rem;
+    border: 1px solid var(--line-color);
+    font-family: inherit;
+    font-size: 0.9rem;
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    padding-top: 2rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+footer a {
+    color: var(--text-muted);
+    text-decoration: underline;
+}
+
+/* --- Bootstrap Navigation Overrides (If you used the Bonus code) --- */
+.custom-navbar {
+    background-color: #f8fafc !important;
+    border: 1px solid var(--line-color);
+    padding: 0.5rem !important;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+.custom-brand { display: none; } /* Hides logo text to keep focus on your actual Name header */
+.navbar-nav .nav-link {
+    color: var(--text-muted) !important;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+}
+.navbar-nav .nav-link:hover { color: var(--link-color) !important; }
+
+/* --- Mobile Adjustments --- */
+@media (max-width: 768px) {
+    body { padding: 0; }
+    .container {
+        padding: 2rem 1.5rem; /* Shrinks the margins on phones */
+        box-shadow: none;
+    }
+    .header-content {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+    h1 { font-size: 1.8rem; }
+}
